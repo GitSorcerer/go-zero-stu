@@ -1,4 +1,4 @@
-module shorturl
+module github.com/GitSorcerer/go-zero-stu
 
 go 1.18
 

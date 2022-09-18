@@ -1,9 +1,9 @@
 package svc
 
 import (
-	"shorturl/api/internal/config"
+	"github.com/GitSorcerer/go-zero-stu/api/internal/config"
 
-	user "shorturl/api/model"
+	user "github.com/GitSorcerer/go-zero-stu/api/model"
 
 	"github.com/zeromicro/go-zero/core/stores/sqlx"
 )

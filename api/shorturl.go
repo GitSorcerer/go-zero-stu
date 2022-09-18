@@ -3,16 +3,16 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/GitSorcerer/go-zero-stu/api/internal/config"
 
-	"shorturl/api/internal/config"
-	"shorturl/api/internal/handler"
-	"shorturl/api/internal/svc"
+	"github.com/GitSorcerer/go-zero-stu/api/internal/handler"
+	"github.com/GitSorcerer/go-zero-stu/api/internal/svc"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/rest"
 )
 
-var configFile = flag.String("f", "etc/shorturl-api.yaml", "the config file")
+var configFile = flag.String("f", "etc/go-zero-stu.yaml", "the config file")
 
 func main() {
 	flag.Parse()

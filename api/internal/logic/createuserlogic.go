@@ -3,8 +3,8 @@ package logic
 import (
 	"context"
 
-	"shorturl/api/internal/svc"
-	"shorturl/api/internal/types"
+	"github.com/GitSorcerer/go-zero-stu/api/internal/svc"
+	"github.com/GitSorcerer/go-zero-stu/api/internal/types"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )

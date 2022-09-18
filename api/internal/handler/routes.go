@@ -4,7 +4,7 @@ package handler
 import (
 	"net/http"
 
-	"shorturl/api/internal/svc"
+	"github.com/GitSorcerer/go-zero-stu/api/internal/svc"
 
 	"github.com/zeromicro/go-zero/rest"
 )
