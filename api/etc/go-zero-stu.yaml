@@ -3,4 +3,9 @@ Host: 0.0.0.0
 Port: 8888
 
 DB:
-  DataSource: root:123456@tcp(mysql:3306)/go-zero?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+  DataSource: root:123456@tcp(127.0.0.1:3306)/go-zero?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+
+CacheRedis:
+  - Host: 127.0.0.1:6379
+    Pass: "123456"
+    Type: node

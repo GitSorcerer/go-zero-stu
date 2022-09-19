@@ -39,9 +39,9 @@ type (
 
 	User struct {
 		Id       int64          `db:"id"`
-		Name     sql.NullString `db:"name"`
-		Age      sql.NullInt64  `db:"age"`
-		NikeName string         `db:"nike_name"`
+		Name     string 		`db:"name"`
+		Age      string 		`db:"age"`
+		NickName string         `db:"nick_name"`
 	}
 )
 
@@ -82,7 +82,7 @@ func (m *defaultUserModel) Insert(ctx context.Context, data *User) (sql.Result, 
 	goZeroUserIdKey := fmt.Sprintf("%s%v", cacheGoZeroUserIdPrefix, data.Id)
 	ret, err := m.ExecCtx(ctx, func(ctx context.Context, conn sqlx.SqlConn) (result sql.Result, err error) {
 		query := fmt.Sprintf("insert into %s (%s) values (?, ?, ?)", m.table, userRowsExpectAutoSet)
-		return conn.ExecCtx(ctx, query, data.Name, data.Age, data.NikeName)
+		return conn.ExecCtx(ctx, query, data.Name, data.Age, data.NickName)
 	}, goZeroUserIdKey)
 	return ret, err
 }
@@ -91,7 +91,7 @@ func (m *defaultUserModel) Update(ctx context.Context, data *User) error {
 	goZeroUserIdKey := fmt.Sprintf("%s%v", cacheGoZeroUserIdPrefix, data.Id)
 	_, err := m.ExecCtx(ctx, func(ctx context.Context, conn sqlx.SqlConn) (result sql.Result, err error) {
 		query := fmt.Sprintf("update %s set %s where `id` = ?", m.table, userRowsWithPlaceHolder)
-		return conn.ExecCtx(ctx, query, data.Name, data.Age, data.NikeName, data.Id)
+		return conn.ExecCtx(ctx, query, data.Name, data.Age, data.NickName, data.Id)
 	}, goZeroUserIdKey)
 	return err
 }

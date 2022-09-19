@@ -16,11 +16,7 @@ type GetUserLogic struct {
 	svcCtx *svc.ServiceContext
 }
 
-func (l *GetUserLogic) NewGetUserLogic(ctx context.Context, svcCtx *svc.ServiceContext) *GetUserLogic {
-	users, err := svcCtx.UserModel.FindOne(l.ctx, 1)
-	if err != nil {
-		fmt.Print("%d,%s\n", users.Id, users.Name)
-	}
+func NewGetUserLogic(ctx context.Context, svcCtx *svc.ServiceContext) *GetUserLogic {
 
 	return &GetUserLogic{
 		Logger: logx.WithContext(ctx),
@@ -29,7 +25,16 @@ func (l *GetUserLogic) NewGetUserLogic(ctx context.Context, svcCtx *svc.ServiceC
 	}
 }
 
-func (l *GetUserLogic) GetUser(req *types.Request) (resp *types.Response, err error) {
+func (l *GetUserLogic) GetUser(req *types.Request, svcCtx *svc.ServiceContext) (resp *types.Response, err error) {
+	users, err := svcCtx.UserModel.FindOne(l.ctx, 1)
+	if err == nil {
+		fmt.Print("%d,%s\n", users.Id, users.Name)
+		return &types.Response{
+			Id:       users.Id,
+			Name:     users.Name,
+			NickName: users.NickName,
+		}, nil
+	}
 	// todo: add your logic here and delete this line
-	return
+	return nil, err
 }

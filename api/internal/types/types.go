@@ -5,4 +5,8 @@ type Request struct {
 }
 
 type Response struct {
+	Id       int64  `json:"id"`
+	Name     string `json:"name"`
+	NickName string `json:"nickName"`
+	Age      uint   `json:"age"`
 }
