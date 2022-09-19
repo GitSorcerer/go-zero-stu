@@ -1,0 +1,13 @@
+Name: greet-api
+Host: 0.0.0.0
+Port: 8888
+
+DB:
+  DataSource: root:123456@tcp(mysql:3306)/go-zero?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+
+# RedisConf:
+#   - Host: 127.0.0.1:6379   # redis地址
+#     Type: node   # redis类型
+#     Pass: 123456   # redis密码
+#     Weight: 20
+ 

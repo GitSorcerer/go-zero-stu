@@ -1,0 +1,26 @@
+syntax = "v1"
+
+info(
+	author: "songmeizi"
+	date:   "2020-01-08"
+	desc:   "api语法示例及语法说明"
+)
+
+type Request {
+	Id       int64  `json:"id"`
+	Name     string `path:"name,options=you|me"`
+	NickName string `json:"nickName"`
+	Age      uint   `json:"age"`
+}
+
+type Response {
+	Id       int64  `json:"id"`
+	Name     string `json:"name"`
+	NickName string `json:"nickName"`
+	Age      uint   `json:"age"`
+}
+
+service greet-api {
+	@handler GreetHandler
+	get /from/:name(Request) returns (Response)
+}
