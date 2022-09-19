@@ -30,5 +30,9 @@ func (l *GreetLogic) Greet(req *types.Request, cCtx *svc.ServiceContext) (resp *
 	if err != nil {
 		fmt.Print("%d,%s\n", users.Id, users.Name)
 	}
-	return
+	return &types.Response{
+		Id:       users.Id,
+		Name:     users.Name,
+		NickName: users.NickName,
+	}, nil
 }
