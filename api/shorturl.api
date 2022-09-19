@@ -8,6 +8,7 @@ info (
 )
 
 type request {
+	Id       int64  `path:"userId"`
 	// TODO: add members here and delete this comment
 }
 

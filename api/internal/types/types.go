@@ -2,6 +2,7 @@
 package types
 
 type Request struct {
+	Id       int64  `path:"userId"`
 }
 
 type Response struct {
