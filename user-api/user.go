@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 
+	"github.com/GitSorcerer/go-zero-stu/user-api/internal/common/middleware"
 	"github.com/GitSorcerer/go-zero-stu/user-api/internal/config"
 	"github.com/GitSorcerer/go-zero-stu/user-api/internal/handler"
 	"github.com/GitSorcerer/go-zero-stu/user-api/internal/svc"
@@ -22,6 +23,7 @@ func main() {
 
 	server := rest.MustNewServer(c.RestConf)
 	defer server.Stop()
+	server.Use(middleware.NewCommonMiddleware().Handle)
 
 	ctx := svc.NewServiceContext(c)
 	handler.RegisterHandlers(server, ctx)

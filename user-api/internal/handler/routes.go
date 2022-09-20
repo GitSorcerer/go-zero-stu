@@ -4,6 +4,7 @@ package handler
 import (
 	"net/http"
 
+	user "github.com/GitSorcerer/go-zero-stu/user-api/internal/handler/user"
 	"github.com/GitSorcerer/go-zero-stu/user-api/internal/svc"
 
 	"github.com/zeromicro/go-zero/rest"
@@ -11,12 +12,26 @@ import (
 
 func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 	server.AddRoutes(
-		[]rest.Route{
-			{
-				Method:  http.MethodPost,
-				Path:    "/user/info",
-				Handler: userInfoHandler(serverCtx),
-			},
-		},
+		rest.WithMiddlewares(
+			[]rest.Middleware{serverCtx.TestMiddleware},
+			[]rest.Route{
+				{
+					Method:  http.MethodPost,
+					Path:    "/user/info",
+					Handler: user.UserInfoHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/user/:id",
+					Handler: user.UserDescHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/user/body",
+					Handler: user.UserBodyHandler(serverCtx),
+				},
+			}...,
+		),
+		rest.WithPrefix("/api/v1"),
 	)
 }

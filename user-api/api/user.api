@@ -11,8 +11,13 @@ info(
 	desc:   "api语法示例及语法说明"
 )
 type (
+	UserInfoBody {
+		UserId int64 `json:"userId"`
+		Id     int64 `json:"id"`
+	}
 	UserInfoReq {
 		UserId int64 `json:"userId"`
+		Id     int64 `path:"id"`
 	}
 	UserInfoResp {
 		UserId       int64 `json:"userId"`
@@ -20,8 +25,21 @@ type (
 	}
 )
 
+@server(
+	group:user
+	prefix:api/v1
+	middleware:TestMiddleware
+)
 service user-api{
 	@doc "user"
 	@handler userInfo
 	post /user/info (UserInfoReq) returns (UserInfoResp)
+	
+	@doc "userDesc"
+	@handler userDesc
+	get /user/:id (UserInfoReq) returns (UserInfoResp)
+	
+	@doc "userBody"
+	@handler userBody
+	post /user/body (UserInfoBody) returns (UserInfoResp)
 }
