@@ -2,7 +2,10 @@ module github.com/GitSorcerer/go-zero-stu
 
 go 1.18
 
-require github.com/zeromicro/go-zero v1.4.0
+require (
+	github.com/pkg/errors v0.9.1
+	github.com/zeromicro/go-zero v1.4.0
+)
 
 require (
 	github.com/beorn7/perks v1.0.1 // indirect
