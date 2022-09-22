@@ -14,4 +14,5 @@ type UserInfoReq struct {
 type UserInfoResp struct {
 	UserId       int64 `json:"userId"`
 	RefreshAfter int64 `json:"refreshAfter"`
+	NickName string `json:"nickName"`
 }

@@ -44,3 +44,6 @@ rpc 服务相关命令：
 使用命令 goctl rpc template -o user.proto, 生成 user.proto 文件
 
 使用命令 goctl rpc proto -src user.proto -dir . 生成 user rpc 服务的代码。
+
+
+go get -u github.com/pkg/errors

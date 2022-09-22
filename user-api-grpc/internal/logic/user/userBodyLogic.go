@@ -26,13 +26,16 @@ func NewUserBodyLogic(ctx context.Context, svcCtx *svc.ServiceContext) *UserBody
 
 func (l *UserBodyLogic) UserBody(req *types.UserInfoBody) (resp *types.UserInfoResp, err error) {
 	// grpc
+	logx.Info("---------UserBody---------")
+	logx.Infof("id:%d,nickName:%s", " respUser.Id", " respUser.NickName")
+
 	respUser, err := l.svcCtx.UserRpcClient.GetUserInfo(l.ctx, &pb.GetUserInfoReq{
 		Id: req.Id,
 	})
 	if err != nil {
 		return nil, err
 	}
-	logx.Info("nickName:" + respUser.NickName)
+	logx.Infof("id:%d,nickName:%s", respUser.Id, respUser.NickName)
 	return &types.UserInfoResp{
 		UserId:   respUser.Id,
 		NickName: respUser.NickName,
