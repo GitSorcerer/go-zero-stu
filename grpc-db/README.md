@@ -8,5 +8,4 @@ goctl rpc protoc  *.proto --go_out=../ --go-grpc_out=../ --zrpc_out=../ --style=
 
 jinzhu   copier.Copy()
 
-
  git clone https://GitSorcerer:XXXX@github.com/GitSorcerer/go-zero-looklook.git
