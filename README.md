@@ -1,4 +1,6 @@
 ```shell
+go get -u github.com/zeromicro/go-zero
+
 goctl api new greet
 cd greet
 go mod init
