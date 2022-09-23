@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option go_package = "./pb";
+
+package pb;
+
+message OrderInfo { 
+    int64 id = 1;
+    string name = 2;
+}
+
+// protoc -I ./ --go_out=paths=source_relative:.  --go-grpc_out=paths=source_relative:. order.proto
