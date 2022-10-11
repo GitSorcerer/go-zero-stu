@@ -49,3 +49,6 @@ rpc 服务相关命令：
 
 
 go get -u github.com/pkg/errors
+
+
+GRPC 四种模式：流拦截器。。。
