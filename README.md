@@ -51,6 +51,7 @@ rpc 服务相关命令：
 go get -u github.com/pkg/errors
 
 
+<<<<<<< HEAD
 ## docker 部署
 ```shell
 # 到模块目录
@@ -64,3 +65,6 @@ docker build -t user-grpc:v1 -f user-grpc/Dockerfile  .
 
 docker run --rm -it -p 8080:8080 user-grpc:v1
 ```
+=======
+GRPC 四种模式：流拦截器。。。
+>>>>>>> fe136e4da8f87ad28175cad998b10d425f2d8c77
