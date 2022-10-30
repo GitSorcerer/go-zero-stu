@@ -1,0 +1,7 @@
+Name: userModel.rpc
+ListenOn: 127.0.0.1:9080
+Mode: dev
+Etcd:
+  Hosts:
+  - 127.0.0.1:2379
+  Key: userModel.rpc

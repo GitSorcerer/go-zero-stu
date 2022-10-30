@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option go_package = "./pb";
+
+package pb;
+
+import "order.proto";
+
+message GetUserInfoReq { 
+    int64 id = 1;
+  
+}
+
+message GetUserInfoResp {
+  // int64 id = 1;
+  string nickName = 1;
+  pb.OrderInfo order =2;
+}
+
+// service
+service usercenter {
+  rpc getUserInfo(GetUserInfoReq) returns (GetUserInfoResp);
+}
+
+//goctl rpc protoc  user.proto --go_out=../ --go-grpc_out=../ --zrpc_out=../ --style=goZero

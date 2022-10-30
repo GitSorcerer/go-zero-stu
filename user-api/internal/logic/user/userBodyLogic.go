@@ -24,7 +24,6 @@ func NewUserBodyLogic(ctx context.Context, svcCtx *svc.ServiceContext) *UserBody
 }
 
 func (l *UserBodyLogic) UserBody(req *types.UserInfoBody) (resp *types.UserInfoResp, err error) {
-	// todo: add your logic here and delete this line
 
-	return
+	return &types.UserInfoResp{}, nil
 }

@@ -1,0 +1,140 @@
+syntax = "proto3";
+
+option go_package ="./pb";
+
+package pb;
+
+// ------------------------------------ 
+// Messages
+// ------------------------------------ 
+
+//--------------------------------order--------------------------------
+message Order {
+  int64 id = 1; //id
+  string name = 2; //name
+  double price = 3; //price
+  int64 createTime = 4; //createTime
+}
+
+message AddOrderReq {
+  string name = 1; //name
+  double price = 2; //price
+}
+
+message AddOrderResp {
+}
+
+message UpdateOrderReq {
+  int64 id = 1; //id
+  string name = 2; //name
+  double price = 3; //price
+}
+
+message UpdateOrderResp {
+}
+
+message DelOrderReq {
+  int64 id = 1; //id
+}
+
+message DelOrderResp {
+}
+
+message GetOrderByIdReq {
+  int64 id = 1; //id
+}
+
+message GetOrderByIdResp {
+  Order order = 1; //order
+}
+
+message SearchOrderReq {
+  int64 page = 1; //page
+  int64 pageSize = 2; //pageSize
+  int64 id = 3; //id
+  string name = 4; //name
+  double price = 5; //price
+  int64 createTime = 6; //createTime
+}
+
+message SearchOrderResp {
+  repeated Order order = 1; //order
+}
+
+//--------------------------------user--------------------------------
+message User {
+  int64 id = 1; //id
+  string name = 2; //name
+  int64 age = 3; //age
+  string nickName = 4; //nickName
+}
+
+message AddUserReq {
+  string name = 1; //name
+  int64 age = 2; //age
+  string nickName = 3; //nickName
+}
+
+message AddUserResp {
+}
+
+message UpdateUserReq {
+  int64 id = 1; //id
+  string name = 2; //name
+  int64 age = 3; //age
+  string nickName = 4; //nickName
+}
+
+message UpdateUserResp {
+}
+
+message DelUserReq {
+  int64 id = 1; //id
+}
+
+message DelUserResp {
+}
+
+message GetUserByIdReq {
+  int64 id = 1; //id
+}
+
+message GetUserByIdResp {
+  User user = 1; //user
+}
+
+message SearchUserReq {
+  int64 page = 1; //page
+  int64 pageSize = 2; //pageSize
+  int64 id = 3; //id
+  string name = 4; //name
+  int64 age = 5; //age
+  string nickName = 6; //nickName
+}
+
+message SearchUserResp {
+  repeated User user = 1; //user
+}
+
+
+
+// ------------------------------------ 
+// Rpc Func
+// ------------------------------------ 
+
+service userOrder{ 
+
+	 //-----------------------order----------------------- 
+	 rpc AddOrder(AddOrderReq) returns (AddOrderResp); 
+	 rpc UpdateOrder(UpdateOrderReq) returns (UpdateOrderResp); 
+	 rpc DelOrder(DelOrderReq) returns (DelOrderResp); 
+	 rpc GetOrderById(GetOrderByIdReq) returns (GetOrderByIdResp); 
+	 rpc SearchOrder(SearchOrderReq) returns (SearchOrderResp); 
+	 //-----------------------user----------------------- 
+	 rpc AddUser(AddUserReq) returns (AddUserResp); 
+	 rpc UpdateUser(UpdateUserReq) returns (UpdateUserResp); 
+	 rpc DelUser(DelUserReq) returns (DelUserResp); 
+	 rpc GetUserById(GetUserByIdReq) returns (GetUserByIdResp); 
+	 rpc SearchUser(SearchUserReq) returns (SearchUserResp); 
+
+}
