@@ -49,3 +49,18 @@ rpc 服务相关命令：
 
 
 go get -u github.com/pkg/errors
+
+
+## docker 部署
+```shell
+# 到模块目录
+cd user-grpc 
+
+# 生成Dockerfile
+goctl  docker -go user.go 
+
+# 回到根目录 生成镜像
+docker build -t user-grpc:v1 -f user-grpc/Dockerfile  . 
+
+docker run --rm -it -p 8080:8080 user-grpc:v1
+```
