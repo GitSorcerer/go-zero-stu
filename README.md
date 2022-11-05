@@ -1,8 +1,7 @@
 # go zero stu
 
-
-
 ## goctl
+https://github.com/zeromicro/go-zero
 
 ### 创建demo
 
@@ -31,8 +30,6 @@ goctl env check -i -f
 ```shell
 goctl api -o blog.api
 ```
-
-
 
 ### rpc 服务
 
