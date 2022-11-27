@@ -25,10 +25,13 @@ func NewCreateUserLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Create
 	}
 }
 
-func (l *CreateUserLogic) CreateUser(req *types.Request) error {
+func (l *CreateUserLogic) CreateUser(req *types.RequestBody) error {
 	// todo: add your logic here and delete this line
 	res, err := l.svcCtx.UserModel.Insert(l.ctx, &user.User{
-		Id: req.Id,
+		Id:       req.Id,
+		Name:     req.Name,
+		NickName: req.NickName,
+		Age:      "18",
 	})
 	if err != nil {
 		return errors.New(err.Error())

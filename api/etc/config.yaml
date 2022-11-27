@@ -9,3 +9,7 @@ CacheRedis:
   - Host: 127.0.0.1:6379
     Pass: "123456"
     Type: node
+
+Log:
+  ServiceName: api
+  

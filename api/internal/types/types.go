@@ -5,6 +5,13 @@ type Request struct {
 	Id       int64  `path:"userId"`
 }
 
+type RequestBody struct {
+	Id       int64  `json:"id"`
+	Name     string `json:"name"`
+	NickName string `json:"nickName"`
+	Age      uint   `json:"age"`
+}
+
 type Response struct {
 	Id       int64  `json:"id"`
 	Name     string `json:"name"`
