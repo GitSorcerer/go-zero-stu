@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 
-	"github.com/GitSorcerer/go-zero-stu/api/internal/svc"
-	"github.com/GitSorcerer/go-zero-stu/api/internal/types"
-	user "github.com/GitSorcerer/go-zero-stu/api/model"
+	"github.com/GitSorcerer/go-zero-stu/api-db/internal/svc"
+	"github.com/GitSorcerer/go-zero-stu/api-db/internal/types"
+	user "github.com/GitSorcerer/go-zero-stu/api-db/model"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )

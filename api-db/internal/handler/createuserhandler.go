@@ -5,9 +5,9 @@ import (
 
 	"github.com/zeromicro/go-zero/rest/httpx"
 
-	"github.com/GitSorcerer/go-zero-stu/api/internal/logic"
-	"github.com/GitSorcerer/go-zero-stu/api/internal/svc"
-	"github.com/GitSorcerer/go-zero-stu/api/internal/types"
+	"github.com/GitSorcerer/go-zero-stu/api-db/internal/logic"
+	"github.com/GitSorcerer/go-zero-stu/api-db/internal/svc"
+	"github.com/GitSorcerer/go-zero-stu/api-db/internal/types"
 )
 
 func CreateUserHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {

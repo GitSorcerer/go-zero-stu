@@ -3,9 +3,9 @@ package handler
 import (
 	"net/http"
 
-	"github.com/GitSorcerer/go-zero-stu/api/internal/logic"
-	"github.com/GitSorcerer/go-zero-stu/api/internal/svc"
-	"github.com/GitSorcerer/go-zero-stu/api/internal/types"
+	"github.com/GitSorcerer/go-zero-stu/api-db/internal/logic"
+	"github.com/GitSorcerer/go-zero-stu/api-db/internal/svc"
+	"github.com/GitSorcerer/go-zero-stu/api-db/internal/types"
 
 	"github.com/zeromicro/go-zero/rest/httpx"
 )

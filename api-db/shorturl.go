@@ -3,10 +3,11 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/GitSorcerer/go-zero-stu/api/internal/config"
 
-	"github.com/GitSorcerer/go-zero-stu/api/internal/handler"
-	"github.com/GitSorcerer/go-zero-stu/api/internal/svc"
+	"github.com/GitSorcerer/go-zero-stu/api-db/internal/config"
+
+	"github.com/GitSorcerer/go-zero-stu/api-db/internal/handler"
+	"github.com/GitSorcerer/go-zero-stu/api-db/internal/svc"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/rest"

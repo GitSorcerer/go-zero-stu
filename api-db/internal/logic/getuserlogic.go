@@ -3,9 +3,9 @@ package logic
 import (
 	"context"
 
-	"github.com/GitSorcerer/go-zero-stu/api/internal/svc"
-	"github.com/GitSorcerer/go-zero-stu/api/internal/types"
-	user "github.com/GitSorcerer/go-zero-stu/api/model"
+	"github.com/GitSorcerer/go-zero-stu/api-db/internal/svc"
+	"github.com/GitSorcerer/go-zero-stu/api-db/internal/types"
+	user "github.com/GitSorcerer/go-zero-stu/api-db/model"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -27,7 +27,7 @@ func NewGetUserLogic(ctx context.Context, svcCtx *svc.ServiceContext) *GetUserLo
 
 func (l *GetUserLogic) GetUser(req *types.Request, svcCtx *svc.ServiceContext) (resp *types.Response, err error) {
 	users, err := svcCtx.UserModel.FindOne(l.ctx, req.Id)
-	u, err := svcCtx.UserModel.List(l.ctx, &user.User{
+	u, _ := svcCtx.UserModel.List(l.ctx, &user.User{
 		Id: req.Id,
 	})
 	l.Logger.Info("u", u)
