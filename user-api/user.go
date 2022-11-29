@@ -23,8 +23,10 @@ func main() {
 
 	server := rest.MustNewServer(c.RestConf)
 	defer server.Stop()
+	//使用拦截器
 	server.Use(middleware.NewCommonMiddleware().Handle)
 
+	//注册handler
 	ctx := svc.NewServiceContext(c)
 	handler.RegisterHandlers(server, ctx)
 
